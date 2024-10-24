@@ -1,0 +1,24 @@
+<h1>Kurs waluty:</h1>
+<main class="main">
+  <form [formGroup]="currencyForm" (ngSubmit)="onSubmit()">
+    <label for="name">Imię: </label>
+    <input id="name" formControlName="name" />
+    <br />
+    <label for="currency">Waluta: </label>
+    <input id="currency" formControlName="currency" />
+    <button type="submit">Wyślij</button>
+  </form>  
+  <br />
+  {{value}}
+  <br />
+<h1>Poprzednie zapytania</h1>
+<button (click)="getRequests()">Pobierz zapytania</button>
+<ul>
+  <li *ngFor="let request of requestsHistory">
+    name:{{request.name}}<br />
+    currency:{{request.currency}}<br />
+    timestamp:{{request.timestamp}}<br />
+    rate:{{request.rate}}<br />
+  </li>
+</ul>
+</main>
